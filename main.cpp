@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	FilaPrioridadeOrdenada fpo(5);
+	FilaPrioridadeOrdenada fpo(8);
 
 	fpo.insere(5);
 	fpo.insere(40);
@@ -19,9 +19,11 @@ int main(int argc, char *argv[])
 	fpo.insere(2);
 	fpo.insere(12);
 
-	fpo.remove();
-	fpo.remove();
-	cout << fpo.verifica() << endl;
+	cout << "Remove: " << fpo.remove() << endl;
+	cout << "Remove: " << fpo.remove() << endl;
+	cout << "Remove: " << fpo.remove() << endl;
+	cout << "Remove: " << fpo.remove() << endl;
+	cout << "Verifica: " << fpo.verifica() << endl;
 
 	FilaPrioridadeDesordenada fpd(5);
 
@@ -31,9 +33,13 @@ int main(int argc, char *argv[])
 	fpd.insere(2);
 	fpd.insere(12);
 
-	fpd.remove();
-	fpd.remove();
-	cout << fpd.verifica() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Remove: " << fpd.remove() << endl;
+	cout << "Verifica: " << fpd.verifica() << endl;
 
 	return 0;
 }

@@ -27,6 +27,8 @@ FilaPrioridadeOrdenada::~FilaPrioridadeOrdenada()
 
 /**
  * insere um inteiro
+ * @params int elemento
+ * @return void
  */
 void FilaPrioridadeOrdenada::insere(int elemento)
 {
@@ -41,11 +43,13 @@ void FilaPrioridadeOrdenada::insere(int elemento)
 
 /**
  * retorna e remove um inteiro com maior prioridade
+ * @return int
  */
 int FilaPrioridadeOrdenada::remove()
 {
 	if(vazia())
 		return -1;
+
 	int topo = verifica();
 
 	filaPrioridade[total-1] = -1;
@@ -56,6 +60,8 @@ int FilaPrioridadeOrdenada::remove()
 
 /**
  * QuickSort
+ * @params int inicio, int fim
+ * @return void
  */
 void FilaPrioridadeOrdenada::ordena(int inicio, int fim)
 {
@@ -86,14 +92,19 @@ void FilaPrioridadeOrdenada::ordena(int inicio, int fim)
 
 /**
  * retorna um inteiro com maior prioridade
+ * @return int
  */
 int FilaPrioridadeOrdenada::verifica()
 {
+	if(vazia())
+		return -1;
+
 	return filaPrioridade[total-1];
 }
 
 /**
  * retorna o número de elementos
+ * @return int
  */
 int FilaPrioridadeOrdenada::getTotal()
 {
