@@ -1,7 +1,7 @@
 /**
  * @description 	Utilização de filas de prioridade com arranjo desordenado
  * @author 			Pedro Augusto - 55423
- * @date     		06/12/2016
+ * @date 			06/09/2016
  */
 #include "FilaPrioridadeDesordenada.h"
 
@@ -36,7 +36,7 @@ void FilaPrioridadeDesordenada::insere(int elemento)
 
 	filaPrioridade[total] = elemento;
 
-	if(maior(elemento))
+	if(elemento > verifica())
 		posicaoMaior = total;
 
 	++total;
@@ -81,7 +81,7 @@ bool FilaPrioridadeDesordenada::maior(int elemento)
 }
 
 /**
- * encontra o elemento maior da fila
+ * encontra o maior elemento da fila
  */
 void FilaPrioridadeDesordenada::encontreMaior()
 {

@@ -1,7 +1,7 @@
 /**
  * @description 	Utilização de filas de prioridade com arranjo desordenado
  * @author 			Pedro Augusto - 55423
- * @date     		06/12/2016
+ * @date 			06/09/2016
  */
 #ifndef FilaPrioridadeDesordenada_H
 #define FilaPrioridadeDesordenada_H

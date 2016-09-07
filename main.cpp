@@ -1,7 +1,7 @@
 /**
  * @description 	Utilização de filas de prioridade
  * @author 			Pedro Augusto - 55423
- * @date     		06/12/2016
+ * @date 			06/09/2016
  */
 #include <iostream>
 #include "FilaPrioridadeOrdenada.h"
