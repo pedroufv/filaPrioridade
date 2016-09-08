@@ -54,7 +54,8 @@ int FilaPrioridadeHeapBinario::remove()
 
 	int topo = verifica();
 
-	filaPrioridade[1] = -1;
+	filaPrioridade[1] = filaPrioridade[total];
+	filaPrioridade[total] = -1;
 
 	corrigeDescendo(1);
 
