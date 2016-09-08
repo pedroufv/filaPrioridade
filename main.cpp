@@ -6,6 +6,7 @@
 #include <iostream>
 #include "FilaPrioridadeOrdenada.h"
 #include "FilaPrioridadeDesordenada.h"
+#include "FilaPrioridadeHeapBinario.h"
 
 using namespace std;
 
@@ -40,6 +41,19 @@ int main(int argc, char *argv[])
 	cout << "Remove: " << fpd.remove() << endl;
 	cout << "Remove: " << fpd.remove() << endl;
 	cout << "Verifica: " << fpd.verifica() << endl;
+
+	FilaPrioridadeHeapBinario fphb(5);
+
+	fphb.insere(5);
+	fphb.insere(40);
+	fphb.insere(3);
+	fphb.insere(2);
+	fphb.insere(12);
+
+	cout << "Remove: " << fphb.remove() << endl;
+	cout << "Remove: " << fphb.remove() << endl;
+	cout << "Remove: " << fphb.remove() << endl;
+	cout << "Verifica: " << fphb.verifica() << endl;
 
 	return 0;
 }

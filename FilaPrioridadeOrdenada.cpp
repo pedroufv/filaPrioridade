@@ -59,6 +59,27 @@ int FilaPrioridadeOrdenada::remove()
 }
 
 /**
+ * retorna um inteiro com maior prioridade
+ * @return int
+ */
+int FilaPrioridadeOrdenada::verifica()
+{
+	if(vazia())
+		return -1;
+
+	return filaPrioridade[total-1];
+}
+
+/**
+ * retorna o número de elementos
+ * @return int
+ */
+int FilaPrioridadeOrdenada::getTotal()
+{
+	return total;
+}
+
+/**
  * QuickSort
  * @params int inicio, int fim
  * @return void
@@ -88,25 +109,4 @@ void FilaPrioridadeOrdenada::ordena(int inicio, int fim)
     if(pivo+1 <= fim){
         ordena(pivo+1,fim);
     }
-}
-
-/**
- * retorna um inteiro com maior prioridade
- * @return int
- */
-int FilaPrioridadeOrdenada::verifica()
-{
-	if(vazia())
-		return -1;
-
-	return filaPrioridade[total-1];
-}
-
-/**
- * retorna o número de elementos
- * @return int
- */
-int FilaPrioridadeOrdenada::getTotal()
-{
-	return total;
 }

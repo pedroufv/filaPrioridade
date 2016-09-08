@@ -70,6 +70,27 @@ int FilaPrioridadeDesordenada::remove()
 }
 
 /**
+ * retorna um inteiro com maior prioridade
+ * @return int
+ */
+int FilaPrioridadeDesordenada::verifica()
+{
+	if(vazia())
+		return -1;
+
+	return filaPrioridade[posicaoMaior];
+}
+
+/**
+ * retorna o número de elementos
+ * @return int
+ */
+int FilaPrioridadeDesordenada::getTotal()
+{
+	return total;
+}
+
+/**
  * verifica se o elemento é o maior da fila
  * @params int elemento
  * @return bool
@@ -96,25 +117,4 @@ void FilaPrioridadeDesordenada::encontreMaior()
 		if(maior(filaPrioridade[i]))
 			posicaoMaior = i;
 	}
-}
-
-/**
- * retorna um inteiro com maior prioridade
- * @return int
- */
-int FilaPrioridadeDesordenada::verifica()
-{
-	if(vazia())
-		return -1;
-
-	return filaPrioridade[posicaoMaior];
-}
-
-/**
- * retorna o número de elementos
- * @return int
- */
-int FilaPrioridadeDesordenada::getTotal()
-{
-	return total;
 }
