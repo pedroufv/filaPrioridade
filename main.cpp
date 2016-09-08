@@ -4,6 +4,9 @@
  * @date 			06/09/2016
  */
 #include <iostream>
+#include <cstdlib>
+#include <time.h>
+#include <stdio.h>
 #include "FilaPrioridadeOrdenada.h"
 #include "FilaPrioridadeDesordenada.h"
 #include "FilaPrioridadeHeapBinario.h"
@@ -12,48 +15,40 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	FilaPrioridadeOrdenada fpo(8);
+	clock_t tOrde = clock();
+	FilaPrioridadeOrdenada fpo(1000);
 
-	fpo.insere(5);
-	fpo.insere(40);
-	fpo.insere(3);
-	fpo.insere(2);
-	fpo.insere(12);
+	for(int i = 1000; i >= 1; --i)
+		fpo.insere(i);
 
-	cout << "Remove: " << fpo.remove() << endl;
-	cout << "Remove: " << fpo.remove() << endl;
-	cout << "Remove: " << fpo.remove() << endl;
-	cout << "Remove: " << fpo.remove() << endl;
-	cout << "Verifica: " << fpo.verifica() << endl;
+	for(int i = 0; i < 999; ++i) {
+		//cout << "Remove: " << fpo.verifica() << endl;
+		fpo.remove();
+	}
+	printf("Ordenada: %.4fs\n", (double)(clock() - tOrde)/CLOCKS_PER_SEC);
 
-	FilaPrioridadeDesordenada fpd(5);
+	clock_t tDese = clock();
+	FilaPrioridadeDesordenada fpd(1000);
 
-	fpd.insere(5);
-	fpd.insere(40);
-	fpd.insere(3);
-	fpd.insere(2);
-	fpd.insere(12);
+	for(int i = 1000; i >= 1; --i)
+		fpd.insere(i);
+	for(int i = 0; i < 999; ++i) {
+		//cout << "Remove: " << fpd.verifica() << endl;
+		fpd.remove();
+	}
+	printf("Desordenada: %.4fs\n", (double)(clock() - tDese)/CLOCKS_PER_SEC);
 
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Remove: " << fpd.remove() << endl;
-	cout << "Verifica: " << fpd.verifica() << endl;
+	clock_t tHeap = clock();
+	FilaPrioridadeHeapBinario fphb(1000);
 
-	FilaPrioridadeHeapBinario fphb(5);
+	for(int i = 1000; i >= 1; --i)
+		fphb.insere(i);
 
-	fphb.insere(5);
-	fphb.insere(40);
-	fphb.insere(3);
-	fphb.insere(2);
-	fphb.insere(12);
-
-	cout << "Remove: " << fphb.remove() << endl;
-	cout << "Remove: " << fphb.remove() << endl;
-	cout << "Remove: " << fphb.remove() << endl;
-	cout << "Verifica: " << fphb.verifica() << endl;
+	for(int i = 0; i < 1000; ++i) {
+		//cout << "Verifica: " << fphb.verifica() << endl;
+		fphb.remove();
+	}
+    printf("HeapBinario: %.4fs\n", (double)(clock() - tHeap)/CLOCKS_PER_SEC);
 
 	return 0;
 }
